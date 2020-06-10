@@ -1,0 +1,27 @@
+var data=[
+	{
+		"id":"1",
+		"name":"A",
+		"city":"Bangalore"
+	},
+	{
+		"id":"2",
+		"name":"B",
+		"city":"Bombay"
+	},
+	{
+		"id":"3",
+		"name":"C",
+		"city":"Mumbai"
+	},
+	{
+		"id":"4",
+		"name":"D",
+		"city":"Delhi"
+	},
+	{
+		"id":"5",
+		"name":"E",
+		"city":"Madras"
+	}
+];

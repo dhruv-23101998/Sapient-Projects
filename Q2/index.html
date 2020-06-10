@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="employeeData.json"></script>
+	</head>
+	<body>
+		<form id="form1">
+			First Number :<br> <input type="text" id="first_num" /><br>
+			Second Number:<br> <input type="text" id="second_num" /><br>
+			<input type="radio" id="add"> Add <br>
+			<input type="radio" id="substract"> Substract <br>
+			<input type="radio" id="multiply"> Multiply <br>
+			<input type="radio" id="divide"> Divide <br><br>
+			<input type="button" value="Compute" onclick="compute()">
+		</form>
+		<br>The Result is: <p><span id = "result"></span></p>
+		<script>
+			function compute() {
+				var ans=0;
+				var num1=document.getElementById("first_num").value;
+				var num2=document.getElementById("second_num").value;
+				if(document.getElementById("add").checked) {
+				    ans=parseInt(num1)+parseInt(num2);
+				}
+				else if(document.getElementById("substract").checked) {
+				    ans=parseInt(num1)-parseInt(num2);
+				}
+				else if(document.getElementById("multiply").checked) {
+				    ans=parseInt(num1)*parseInt(num2);
+				}
+				else if(document.getElementById("divide").checked) {
+				    ans=parseInt(num1)/parseInt(num2);
+				}
+				document.getElementById("result").innerHTML=ans;
+				document.getElementById("first_num").value='';
+				document.getElementById("second_num").value='';
+				document.getElementById("add").checked=false;
+				document.getElementById("substract").checked=false;
+				document.getElementById("multiply").checked=false;
+				document.getElementById("divide").checked=false;
+			}
+		</script>
+		<input type="button" value="Click Here To Employee Details" onclick="getDetails()"><br>
+		<script>
+			function getDetails() {
+				var mytable="<table border='1'>";
+				mytable+="<thead><tr><th>Employee ID</th><th>Employee Name</th><th>Employee City</th></tr></thead>";
+				mytable+="<tbody>";
+				for(var i=0;i<data.length;i++) {
+					mytable+="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].city+"</td></tr>";
+				}
+				mytable+="</tbody></table>";
+				document.getElementById("a1").innerHTML=mytable;
+			}
+		</script>
+		<p id="a1"></p>
+		<h2>Enter The Name of Employee to Get Details</h2>
+		<input type="text" id="employeename">
+		<input type="button" value="Submit Employee Name" onclick="getEmployeeDetails()"><br>
+		<script>
+			function getEmployeeDetails() {
+				var employee='{ "id" : ';
+				var name=document.getElementById("employeename").value;
+				for(var i=0;i<data.length;i++) {
+					if(data[i].name==name) {
+						employee+='"';
+						employee+=data[i].id;
+						employee+='" , "name" : "';
+						employee+=data[i].name;
+						employee+='" , "city" : "';
+						employee+=data[i].city;
+						employee+='" }';
+
+					}
+				}
+				document.getElementById("c1").innerHTML="Employee Details are as follows:";
+				document.getElementById("b1").innerHTML=employee;
+			}
+		</script>
+		<h3 id="c1"></h3>
+		<p id="b1"></p>
+	</body>
+</html>

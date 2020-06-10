@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="emp" class="com.assignment.week7.Q1.EmployeeDetails">
+		<property name="employees">
+			<map>
+				<entry key="1" value-ref="employee1"/>
+				<entry key="2" value-ref="employee2"/>
+				<entry key="3" value-ref="employee3"/>
+				<entry key="4" value-ref="employee4"/>
+				<entry key="5" value-ref="employee5"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="employee1" class="com.assignment.week7.Q1.Employee">
+		<property name="id" value="1"></property>
+		<property name="name" value="A"></property>
+		<property name="city" value="Bangalore"></property>
+	</bean>
+	<bean id="employee2" class="com.assignment.week7.Q1.Employee">
+		<property name="id" value="2"></property>
+		<property name="name" value="B"></property>
+		<property name="city" value="Bombay"></property>
+	</bean>
+	<bean id="employee3" class="com.assignment.week7.Q1.Employee">
+		<property name="id" value="3"></property>
+		<property name="name" value="C"></property>
+		<property name="city" value="Mumbai"></property>
+	</bean>
+	<bean id="employee4" class="com.assignment.week7.Q1.Employee">
+		<property name="id" value="4"></property>
+		<property name="name" value="D"></property>
+		<property name="city" value="Delhi"></property>
+	</bean>
+	<bean id="employee5" class="com.assignment.week7.Q1.Employee">
+		<property name="id" value="5"></property>
+		<property name="name" value="E"></property>
+		<property name="city" value="Madras"></property>
+	</bean>
+</beans>
