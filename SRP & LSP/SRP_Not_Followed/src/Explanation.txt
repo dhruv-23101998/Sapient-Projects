@@ -1,0 +1,4 @@
+The Calculator class does not follows SRP as if someone wants to provide a different type of calculate function
+like Mod function, or floor function he cant use this class.
+Instead if structure in SRP_Followed project is used, one can just extend the Calculate class for his own custom
+calculate function.

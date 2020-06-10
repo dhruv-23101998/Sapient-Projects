@@ -1,0 +1,4 @@
+According to Liskov Substitution Principle,the objects of a superclass shall be replaceable
+with objects of its subclasses without breaking the application. But this is not followed here.
+Because overridden method of subclass can not accept the value of b as 0.
+The solution to this is is present in LSP_Followed Project Folder.
