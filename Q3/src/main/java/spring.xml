@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="stud" class="com.example.demo.StudentDetails">
+		<property name="students">
+			<map>
+				<entry key="1" value-ref="student1"/>
+				<entry key="2" value-ref="student2"/>
+				<entry key="3" value-ref="student3"/>
+				<entry key="4" value-ref="student4"/>
+				<entry key="5" value-ref="student5"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="student1" class="com.example.demo.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="A"></property>
+		<property name="city" value="Bangalore"></property>
+	</bean>
+	<bean id="student2" class="com.example.demo.Student">
+		<property name="id" value="2"></property>
+		<property name="name" value="B"></property>
+		<property name="city" value="Bombay"></property>
+	</bean>
+	<bean id="student3" class="com.example.demo.Student">
+		<property name="id" value="3"></property>
+		<property name="name" value="C"></property>
+		<property name="city" value="Mumbai"></property>
+	</bean>
+	<bean id="student4" class="com.example.demo.Student">
+		<property name="id" value="4"></property>
+		<property name="name" value="D"></property>
+		<property name="city" value="Delhi"></property>
+	</bean>
+	<bean id="student5" class="com.example.demo.Student">
+		<property name="id" value="5"></property>
+		<property name="name" value="E"></property>
+		<property name="city" value="Madras"></property>
+	</bean>
+</beans>
